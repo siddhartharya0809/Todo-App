@@ -1,9 +1,19 @@
 let ulTasks = $('#ulTasks')
 let btnAdd = $('#btnAdd')
-let btnClr = $('#btnClr')
-let inpNewTask = $('#inpNewTask')
+let btnReset = $('#btnReset')
+let btnSort = $('#btnSort')
+let btnCleanup = $('#btnCleanup')
+let inpnewTask = $('#inpnewTask')
 
-btnAdd.click(() => {
-    console.log(inpNewTask.val())
-    inpNewTask.val("")
-})
+function addItem() {
+    let listItem = $('<li>', {
+        'class': 'list-group-item',
+        text: inpnewTask.val()
+    })
+    listItem.click(() => {
+        listItem.toggleClass('done')
+    })
+    ulTasks.append(listItem)
+    inpnewTask.val('')
+    toggleInputButtons()
+}
