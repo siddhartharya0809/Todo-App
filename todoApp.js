@@ -35,10 +35,10 @@ function sortTasks() {
 
 // function to disable or enable the buttons according to tasks are done or not
 function toggleInputButtons() {
-    btnReset.prop('disabled', inpNewTask.val() === '')
-    btnAdd.prop('disabled', inpNewTask.val() === '')
-    btnSort.prop('disabled', ulTasks.children().length < 1)
-    btnCleanup.prop('disabled', ulTasks.children().length < 1)
+    btnReset.prop('disabled', inpNewTask.val() === '')      // should be disabled until a new task is typed or entered in the list
+    btnAdd.prop('disabled', inpNewTask.val() === '')        // should be desabled until a new task is typed or entered in the list
+    btnSort.prop('disabled', ulTasks.children().length < 1)     // should be disabled until and unless a single task is added in the list
+    btnCleanup.prop('disabled', ulTasks.children().length < 1)  // should be disabled until and unless a single task is added in the list 
 }
 
 // function to create a keypress event so that when we press enter an item is inserted in a list
